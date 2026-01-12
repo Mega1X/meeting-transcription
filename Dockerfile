@@ -103,6 +103,7 @@ COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 # Make entrypoint script executable and set up basic permissions
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh \
+  && sed -i 's/\r$//' /usr/local/bin/docker-entrypoint.sh \
   && chown appuser:appuser /app/scriberr
 
 # Expose port and declare volume for persistence

@@ -1,6 +1,7 @@
 services:
   scriberr:
-    image: ghcr.io/rishikanthc/scriberr:latest
+    # image: ghcr.io/rishikanthc/scriberr:latest
+    build: .
     ports:
       - "8080:8080"
     volumes:
@@ -10,9 +11,11 @@ services:
       - PUID=${PUID:-1000}
       - PGID=${PGID:-1000}
       # Security: already set in container, but can be overridden
-      - APP_ENV=production
+      - APP_ENV=development
       # CORS: comma-separated list of allowed origins for production
-      # - ALLOWED_ORIGINS=https://your-domain.com
+      - ALLOWED_ORIGINS=http://localhost:5173,http://localhost:8080
+      - HF_TOKEN=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
+      - SECURE_COOKIES=false # Uncomment this ONLY if you are not using SSL
     restart: unless-stopped
 
 volumes:

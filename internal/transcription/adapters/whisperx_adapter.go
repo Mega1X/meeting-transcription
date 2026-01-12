@@ -554,7 +554,11 @@ func (w *WhisperXAdapter) buildWhisperXArgs(input interfaces.AudioInput, params 
 	args = append(args, "--patience", fmt.Sprintf("%.2f", w.GetFloatParameter(params, "patience")))
 
 	// HuggingFace token
-	if hfToken := w.GetStringParameter(params, "hf_token"); hfToken != "" {
+	hfToken := w.GetStringParameter(params, "hf_token")
+	if hfToken == "" {
+		hfToken = os.Getenv("HF_TOKEN")
+	}
+	if hfToken != "" {
 		args = append(args, "--hf_token", hfToken)
 	}
 

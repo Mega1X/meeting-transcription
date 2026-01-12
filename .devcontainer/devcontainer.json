@@ -1,0 +1,21 @@
+{
+    "name": "Scriberr Codespace",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "scriberr",
+    "workspaceFolder": "/app",
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "golang.go",
+                "dbaeumer.vscode-eslint"
+            ]
+        }
+    },
+    "forwardPorts": [
+        8080
+    ],
+    "remoteUser": "appuser"
+}
