@@ -2,6 +2,11 @@
   <img src="logo.svg" height="90" style="vertical-align: middle;" />
   <img src="logo-text.svg" height="80" style="vertical-align: middle;" />
 </div>
+<div align="center">
+  <a href="https://codespaces.new/Mega1X/meeting-transcription">
+    <img src="https://github.com/codespaces/badge.svg" alt="Open in GitHub Codespaces" />
+  </a>
+</div>
 </br>
 </br>
 <p align="center">
