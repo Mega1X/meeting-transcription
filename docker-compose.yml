@@ -14,7 +14,7 @@ services:
       - APP_ENV=development
       # CORS: comma-separated list of allowed origins for production
       - ALLOWED_ORIGINS=http://localhost:5173,http://localhost:8080
-      - HF_TOKEN=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
+      - HF_TOKEN=${HF_TOKEN}
       - SECURE_COOKIES=false # Uncomment this ONLY if you are not using SSL
     restart: unless-stopped
 
